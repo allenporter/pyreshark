@@ -31,6 +31,9 @@ extern "C" {
 #ifdef _WIN32
     #define PYTHON_27 "python27"
     #define PYTHON_26 "python26"
+#elif __APPLE__
+    #define PYTHON_27 "libpython2.6.dylib"
+    #define PYTHON_26 "libpython2.7.dylib"
 #else
     #define PYTHON_27 "libpython2.7.so.1.0"
     #define PYTHON_26 "libpython2.6.so.1.0"

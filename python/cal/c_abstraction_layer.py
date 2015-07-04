@@ -27,9 +27,21 @@ from ws_types import WS_CREATE_DISSECTOR_HANDLE_ARGS, WS_CREATE_DISSECTOR_HANDLE
 from ws_types import WS_EXPERT_ADD_INFO_FORMAT_ARGS, WS_EXPERT_ADD_INFO_FORMAT_RETURN
 import platform
 
-PSLIBNAME_DICT = {"Windows" : "pyreshark.dll", "Linux" : "pyreshark.so"}
-WSLIBNAME_DICT = {"Windows" : "libwireshark.dll", "Linux" : "libwireshark.so"}
-WSUTILLIBNAME_DICT = {"Windows" : "libwsutil.dll", "Linux" : "libwsutil.so"}
+PSLIBNAME_DICT = {
+  "Windows" : "pyreshark.dll",
+  "Linux" : "pyreshark.so",
+  "Darwin" : "pyreshark.so",
+}
+WSLIBNAME_DICT = {
+  "Windows" : "libwireshark.dll",
+  "Linux" : "libwireshark.so",
+  "Darwin" : "libwireshark.dylib",
+}
+WSUTILLIBNAME_DICT = {
+  "Windows" : "libwsutil.dll",
+  "Linux" : "libwsutil.so",
+  "Darwin" : "libwsutil.dylib",
+}
 
 class CAL(object):
     
