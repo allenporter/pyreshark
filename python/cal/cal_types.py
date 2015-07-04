@@ -383,7 +383,7 @@ class FieldItem(ItemBase):
                 keys_type = type(key)
             elif keys_type != type(key):
                 raise Exception("String key %s is not of type %s" % (key, keys_type))
-        if keys_type == int:
+        if keys_type == int or keys_type == long:
             vals_array_type = WSvalue_string * (len(strings_dict) + 1)
             self._strings = vals_array_type(*([WSvalue_string(value, s) for value, s in strings_dict.iteritems()] + [WSvalue_string(0,None)]))
         elif keys_type == bool:
@@ -392,7 +392,6 @@ class FieldItem(ItemBase):
             rvals_array_type = WSrange_string * (len(strings_dict) + 1)
             self._strings = rvals_array_type(*([WSrange_string(min, max, s) for (min, max), s in strings_dict.iteritems()] + [WSrange_string(0,0, None)]))
             str_display = BASE_RANGE_STRING
-        
         return (addressof(self._strings), str_display)
 
     def append_text(self, text):

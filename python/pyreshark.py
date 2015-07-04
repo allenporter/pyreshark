@@ -26,6 +26,7 @@ import os.path
 from glob import glob
 import traceback
 import pyreshark_locator
+import sys
 
 for directory in sys.path:
     if os.path.realpath(directory) == os.path.realpath("."):
